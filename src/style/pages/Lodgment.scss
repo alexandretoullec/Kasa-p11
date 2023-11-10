@@ -1,0 +1,112 @@
+@use "../general/general.scss" as var;
+
+.presentation {
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: var.$layout-breakpoint-small) {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__title {
+      color: var.$fcprimary;
+      font-size: var.$fsh2;
+      font-weight: 500;
+      line-height: 51px;
+    }
+    &__location {
+      color: var.$fcprimary;
+      font-size: var.$fsh3;
+      font-weight: 500;
+      line-height: 51px;
+    }
+    &__tags {
+      display: flex;
+      @media (max-width: var.$layout-breakpoint-small) {
+        flex-wrap: wrap;
+      }
+      & p {
+        background-color: var.$fcprimary;
+        color: var.$fcwhite;
+        padding: 0.5rem 2rem;
+        border-radius: 10px;
+        margin-right: 0.5rem;
+        @media (max-width: var.$layout-breakpoint-small) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  &-right {
+    width: auto;
+    @media (max-width: var.$layout-breakpoint-small) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+    }
+    &__ownerProfile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      @media (max-width: var.$layout-breakpoint-small) {
+        width: 40%;
+      }
+      &__name {
+        text-align: right;
+        margin-right: 1rem;
+        & h3 {
+          font-size: var.$fsh3;
+          color: var.$fcprimary;
+          overflow-wrap: break-word;
+        }
+      }
+      & img {
+        border-radius: 50%;
+        @media (max-width: var.$layout-breakpoint-small) {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+.stars {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: var.$layout-breakpoint-small) {
+    width: 40%;
+  }
+}
+
+.containerStyles {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  @media (max-width: var.$layout-breakpoint-small) {
+    height: 300px;
+    margin-top: 1rem;
+  }
+}
+
+.detail-informaton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem;
+  gap: 10rem;
+  @media (max-width: var.$layout-breakpoint-small) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

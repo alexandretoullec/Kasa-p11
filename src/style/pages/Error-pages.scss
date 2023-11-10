@@ -1,0 +1,29 @@
+@use "../general/general.scss" as var;
+
+.errorPage {
+  color: var.$fcprimary;
+  & h1 {
+    font-size: 288px;
+    font-weight: 700;
+    line-height: 411px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  & p {
+    font-size: 36px;
+
+    line-height: 51px;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+  & a {
+    color: var.$fcprimary;
+    text-decoration: none;
+
+    font-size: 18px;
+
+    line-height: 26px;
+
+    text-align: center;
+  }
+}

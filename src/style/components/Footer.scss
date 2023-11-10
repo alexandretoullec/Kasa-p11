@@ -1,0 +1,30 @@
+@use "../general/general.scss" as var;
+
+.footer {
+  color: var.$fcwhite;
+  background-color: var.$bcblack;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 0;
+  @media (max-width: var.$layout-breakpoint-small) {
+    width: 100%;
+    justify-content: center;
+  }
+  & h2 {
+    font-family: var.$ffprimary;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: center;
+    @media (max-width: var.$layout-breakpoint-small) {
+      font-size: 12px;
+      width: 8rem;
+      line-height: 15px;
+      margin-top: 1rem;
+    }
+  }
+}

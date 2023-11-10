@@ -1,0 +1,44 @@
+@use "../general/general.scss" as var;
+
+.mainTitle {
+  position: relative;
+  margin: 0 3rem;
+
+  border-radius: 15px;
+  height: 15rem;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  &::before {
+    content: "";
+    background-image: url("../../assets/backgroundTitle.png");
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+  }
+  @media (max-width: var.$layout-breakpoint-small) {
+    width: 100%;
+    margin: 0;
+    height: 7rem;
+  }
+  & h1 {
+    isolation: isolate;
+    font-family: var.$ffprimary;
+    color: var.$fcwhite;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 68px;
+    letter-spacing: 0em;
+    // filter: contrast(0%);
+    @media (max-width: var.$layout-breakpoint-small) {
+      font-size: 18px;
+      text-align: left;
+    }
+  }
+}

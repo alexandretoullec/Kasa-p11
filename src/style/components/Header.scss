@@ -1,0 +1,47 @@
+@use "../general/general.scss" as var;
+
+.header {
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  margin: 3rem 3rem 3rem;
+  @media (max-width: var.$layout-breakpoint-small) {
+    width: 100%;
+    margin: 0;
+    align-items: center;
+  }
+  & img {
+    height: 4rem;
+    @media (max-width: var.$layout-breakpoint-small) {
+      height: 2rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: end;
+    @media (max-width: var.$layout-breakpoint-small) {
+      width: 100%;
+    }
+    & a {
+      color: var.$fcprimary;
+      width: 10rem;
+      text-decoration: none;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 34px;
+      letter-spacing: 0em;
+      text-align: right;
+      &.active {
+        text-decoration: underline;
+      }
+      @media (max-width: var.$layout-breakpoint-small) {
+        font-size: 14px;
+        width: 5rem;
+      }
+    }
+  }
+}

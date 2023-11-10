@@ -1,0 +1,21 @@
+@use "../general/general.scss" as var;
+
+.mainContainer {
+  border-radius: 15px;
+  width: auto;
+  height: 100%;
+  padding: 2rem 0;
+  background-color: var.$bclightgrey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 1rem;
+  margin: 3rem;
+  @media (max-width: var.$layout-breakpoint-small) {
+    grid-template-columns: 1fr;
+    width: auto;
+    background-color: transparent;
+    align-items: center;
+    margin: 0;
+    padding: 1rem 0;
+  }
+}

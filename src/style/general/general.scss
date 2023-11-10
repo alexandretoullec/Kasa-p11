@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+// ****************ff and others**********
+
+$ffprimary: "Montserrat", sans-serif;
+
+$fcprimary: #ff6060;
+$fcwhite: #ffffff;
+
+$bclightgrey: #f6f6f6;
+$bcblack: #000000;
+
+$fsh2: 36px;
+$fsh3: 18px;
+$fsp: 18px;
+
+// general
+
+body {
+  // margin: 3rem;
+  font-family: $ffprimary;
+}
+
+//responsive
+
+$layout-breakpoint-small: 660px;
