@@ -14,36 +14,52 @@ import ErrorPage from "./Error-page.jsx";
 import Lodgment from "./Lodgment.jsx";
 
 const Router = () => {
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <App />,
-  //     errorElement: <ErrorPage />,
-  //   },
-  //   {
-  //     path: "apropos",
-  //     element: <APropos />,
-  //     errorElement: <ErrorPage />,
-  //   },
-  //   {
-  //     path: "lodgment/:id",
-  //     element: <Lodgment />,
-  //     errorElement: <ErrorPage />,
-  //   },
-  // ]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      // eslint-disable-next-line react/jsx-key
+      element: [<Header key={0} />, <App key={1} />, <Footer key={2} />],
+      errorElement: [
+        <Header key={0} />,
+        <ErrorPage key={1} />,
+        <Footer key={2} />,
+      ],
+    },
+    {
+      path: "/apropos",
+      // eslint-disable-next-line react/jsx-key
+      element: [<Header key={0} />, <APropos key={1} />, <Footer key={2} />],
+      errorElement: [
+        <Header key={0} />,
+        <ErrorPage key={1} />,
+        <Footer key={2} />,
+      ],
+    },
+    {
+      path: "Lodgment/:currentId",
+      // eslint-disable-next-line react/jsx-key
+      element: [<Header key={0} />, <Lodgment key={1} />, <Footer key={2} />],
+      errorElement: [
+        <Header key={0} />,
+        <ErrorPage key={1} />,
+        <Footer key={2} />,
+      ],
+    },
+  ]);
 
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/apropos" element={<APropos />} />
-        <Route path="/Lodgment/:currentId" element={<Lodgment />} />
-        <Route path=":*" element={<ErrorPage />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-    // <RouterProvider router={router} />
+    // <BrowserRouter>
+    //   <Header />
+    //   <Routes>
+    //     <Route path="/" element={<App />} />
+    //     <Route path="/apropos" element={<APropos />} />
+    //     <Route path="/Lodgment/:currentId" element={<Lodgment />} />
+    //     <Route path="*" element={<ErrorPage />} />
+    //   </Routes>
+    //   <Footer />
+    // </BrowserRouter>
+
+    <RouterProvider router={router} />
   );
 };
 

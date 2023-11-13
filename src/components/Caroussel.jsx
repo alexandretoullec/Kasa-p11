@@ -82,15 +82,26 @@ const Caroussel = ({ picturesDatas, alt, id }) => {
 
   return (
     <div style={slidersStyle}>
-      <div style={leftArrowContainer} onClick={goToPreviuous}>
-        <img style={leftArrowStyle} src="/arrow_back.png" alt="kasa_logo" />
-      </div>
+      {picturesDatas.length === 1 ? (
+        ""
+      ) : (
+        <div style={leftArrowContainer} onClick={goToPreviuous}>
+          <img style={leftArrowStyle} src="/arrow_back.png" alt="kasa_logo" />
+        </div>
+      )}
 
       <div style={slideStyles}></div>
-
-      <div style={rightArrowContainer} onClick={goToNext}>
-        <img style={rightArrowStyle} src="/arrow_forward.png" alt="kasa_logo" />
-      </div>
+      {picturesDatas.length === 1 ? (
+        ""
+      ) : (
+        <div style={rightArrowContainer} onClick={goToNext}>
+          <img
+            style={rightArrowStyle}
+            src="/arrow_forward.png"
+            alt="kasa_logo"
+          />
+        </div>
+      )}
 
       <div style={dotContainerStyle}>
         {/* {picturesDatas.map((picture, index) => {
@@ -100,9 +111,13 @@ const Caroussel = ({ picturesDatas, alt, id }) => {
             </div>
           );
         })} */}
-        <p>
-          {currentIndex + 1} / {picturesDatas.length}
-        </p>
+        {picturesDatas.length === 1 ? (
+          ""
+        ) : (
+          <p>
+            {currentIndex + 1} / {picturesDatas.length}
+          </p>
+        )}
       </div>
     </div>
   );

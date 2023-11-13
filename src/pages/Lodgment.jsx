@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 
 const Lodgment = () => {
   const { currentId } = useParams();
-  console.log(currentId);
+
   const id = currentId.substring(1);
 
   const API_URL = "/logements.json";
@@ -24,11 +24,9 @@ const Lodgment = () => {
   const getCurrentLodgmentData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
-    console.log(data);
-    console.log(currentId);
+
     const filteredData = data.find((logement) => logement.id === id);
 
-    console.log(filteredData);
     return filteredData;
   };
 
