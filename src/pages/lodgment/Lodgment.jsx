@@ -72,12 +72,6 @@ const Lodgment = () => {
     const firstName = arrayName[0];
     const lastName = arrayName[1];
 
-    const containerStyles = {
-      width: "100%",
-      height: "600px",
-      margin: "0 auto",
-    };
-
     return (
       <div>
         <div className="containerStyles">
