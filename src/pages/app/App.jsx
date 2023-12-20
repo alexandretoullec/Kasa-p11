@@ -12,10 +12,13 @@ const App = () => {
   const [lodgments, setLodgments] = useState([]);
 
   const accomodations = async () => {
-    const response = await fetch(API_URL);
-    const data = await response.json();
-
-    setLodgments(data);
+    try {
+      const response = await fetch(API_URL);
+      const data = await response.json();
+      setLodgments(data);
+    } catch (error) {
+      console.error("Error fetching data:", error.message);
+    }
   };
 
   useEffect(() => {

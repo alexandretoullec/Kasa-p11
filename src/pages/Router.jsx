@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "../components/header/Header.jsx";
 import Footer from "../components/footer/Footer.jsx";
 import App from "./app/App.jsx";
@@ -8,7 +8,7 @@ import Lodgment from "../pages/lodgment/Lodgment.jsx";
 
 const Router = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
@@ -17,7 +17,7 @@ const Router = () => {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 };
 
