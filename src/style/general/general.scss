@@ -14,13 +14,13 @@ $fsh2: 36px;
 $fsh3: 18px;
 $fsp: 18px;
 
+//responsive
+
+$layout-breakpoint-small: 660px;
+
 // general
 
 body {
   // margin: 3rem;
   font-family: $ffprimary;
 }
-
-//responsive
-
-$layout-breakpoint-small: 660px;

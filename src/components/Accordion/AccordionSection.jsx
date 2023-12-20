@@ -1,10 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
 const accordionComponent = {
   marginBottom: "2rem",
   display: "flex",
   flexDirection: "column",
-
   width: "100%",
 };
 
@@ -24,7 +24,6 @@ const accordionTitleStyles = {
 
 const accordionContentStyles = {
   borderRadius: "5px",
-
   padding: "2rem 1rem ",
   color: "white",
   background: "#fa8484",
