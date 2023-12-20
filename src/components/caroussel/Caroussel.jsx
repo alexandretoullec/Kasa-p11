@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const Caroussel = ({ picturesDatas, alt, id }) => {
+const Caroussel = ({ picturesDatas }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slidersStyle = {
@@ -59,12 +60,6 @@ const Caroussel = ({ picturesDatas, alt, id }) => {
     color: "white",
   };
 
-  const dotStyle = {
-    margin: "0 3px",
-    cursor: "pointer",
-    fontSize: "20px",
-  };
-
   const goToPreviuous = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? picturesDatas.length - 1 : currentIndex - 1;
@@ -76,17 +71,13 @@ const Caroussel = ({ picturesDatas, alt, id }) => {
     setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
-
   return (
     <div style={slidersStyle}>
       {picturesDatas.length === 1 ? (
         ""
       ) : (
         <div style={leftArrowContainer} onClick={goToPreviuous}>
-          <img style={leftArrowStyle} src="/arrow_back.png" alt="kasa_logo" />
+          <img style={leftArrowStyle} src="/arrow_back.png" alt="arrow_back" />
         </div>
       )}
 
@@ -98,19 +89,12 @@ const Caroussel = ({ picturesDatas, alt, id }) => {
           <img
             style={rightArrowStyle}
             src="/arrow_forward.png"
-            alt="kasa_logo"
+            alt="arrow_forward"
           />
         </div>
       )}
 
       <div style={dotContainerStyle}>
-        {/* {picturesDatas.map((picture, index) => {
-          return (
-            <div style={dotStyle} key={index} onClick={() => goToSlide(index)}>
-              ●
-            </div>
-          );
-        })} */}
         {picturesDatas.length === 1 ? (
           ""
         ) : (

@@ -24,7 +24,7 @@ const Lodgment = () => {
       const response = await fetch(API_URL);
       const data = await response.json();
       const filteredData = data.find((logement) => logement.id === id);
-      setCurrentLodgment(filteredData || {}); // Set an empty object if not found
+      setCurrentLodgment(filteredData || {});
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -75,11 +75,7 @@ const Lodgment = () => {
     return (
       <div>
         <div className="containerStyles">
-          <Caroussel
-            picturesDatas={pictures}
-            alt={title}
-            id={currentLodgment.id}
-          />
+          <Caroussel picturesDatas={pictures} />
         </div>
         <div className="presentation">
           <div className="presentation-left">

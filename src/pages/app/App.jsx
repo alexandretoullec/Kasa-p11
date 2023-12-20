@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 import MainTitle from "../../components/mainTitle/MainTitle";
 import Container from "../../components/container/Container";
 

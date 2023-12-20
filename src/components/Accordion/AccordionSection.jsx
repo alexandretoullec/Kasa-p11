@@ -32,7 +32,6 @@ const AccordionSection = ({
   section,
   isACtiveSection,
   setActiveIndex,
-
   sectionIndex,
 }) => {
   const toggleSection = () => {
