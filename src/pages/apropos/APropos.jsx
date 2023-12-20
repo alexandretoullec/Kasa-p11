@@ -27,7 +27,7 @@ const aproposDatas = [
 
 const APropos = () => {
   return (
-    <div>
+    <div className="aPropos">
       <div className="aProposBanner"></div>
       <div className="accordionSection">
         <Accordion sections={aproposDatas} />

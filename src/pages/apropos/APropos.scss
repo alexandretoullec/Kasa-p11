@@ -1,5 +1,11 @@
 @use "../../style/general/general.scss" as var;
 
+.aPropos {
+  @media (max-width: var.$layout-breakpoint-small) {
+    margin: 0 0.8rem;
+  }
+}
+
 .aProposBanner {
   position: relative;
   margin: 0 3rem;
