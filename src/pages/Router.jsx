@@ -1,66 +1,53 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  Routes,
-  Route,
-  RouterProvider,
-  BrowserRouter,
-} from "react-router-dom";
-import Header from "../components/Header.jsx";
-import Footer from "../components/Footer.jsx";
-import App from "./App.jsx";
-import APropos from "./APropos.jsx";
-import ErrorPage from "./Error-page.jsx";
-import Lodgment from "./Lodgment.jsx";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Header from "../components/header/Header.jsx";
+import Footer from "../components/footer/Footer.jsx";
+import App from "./app/App.jsx";
+import APropos from "./apropos/APropos.jsx";
+import ErrorPage from "./errorPage/Error-page.jsx";
+import Lodgment from "../pages/lodgment/Lodgment.jsx";
 
 const Router = () => {
+  const Layout = () => {
+    return (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
-      // eslint-disable-next-line react/jsx-key
-      element: [<Header key={0} />, <App key={1} />, <Footer key={2} />],
-      errorElement: [
-        <Header key={0} />,
-        <ErrorPage key={1} />,
-        <Footer key={2} />,
-      ],
-    },
-    {
-      path: "/apropos",
-      // eslint-disable-next-line react/jsx-key
-      element: [<Header key={0} />, <APropos key={1} />, <Footer key={2} />],
-      errorElement: [
-        <Header key={0} />,
-        <ErrorPage key={1} />,
-        <Footer key={2} />,
-      ],
-    },
-    {
-      path: "Lodgment/:currentId",
-      // eslint-disable-next-line react/jsx-key
-      element: [<Header key={0} />, <Lodgment key={1} />, <Footer key={2} />],
-      errorElement: [
-        <Header key={0} />,
-        <ErrorPage key={1} />,
-        <Footer key={2} />,
+      element: <Layout />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "/",
+          element: <App />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/Lodgment/:currentId",
+          element: <Lodgment />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "/apropos",
+          element: <APropos />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: "*",
+          element: <ErrorPage />,
+        },
       ],
     },
   ]);
 
-  return (
-    // <BrowserRouter>
-    //   <Header />
-    //   <Routes>
-    //     <Route path="/" element={<App />} />
-    //     <Route path="/apropos" element={<APropos />} />
-    //     <Route path="/Lodgment/:currentId" element={<Lodgment />} />
-    //     <Route path="*" element={<ErrorPage />} />
-    //   </Routes>
-    //   <Footer />
-    // </BrowserRouter>
-
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default Router;

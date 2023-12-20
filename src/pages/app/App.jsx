@@ -1,9 +1,9 @@
 // import { useState } from "react";
 
-import MainTitle from "../components/MainTitle";
-import Container from "../components/Container";
+import MainTitle from "../../components/mainTitle/MainTitle";
+import Container from "../../components/container/Container";
 
-import "../style/main.css";
+import "./App.scss";
 import { useEffect, useState } from "react";
 
 const API_URL = "/logements.json";

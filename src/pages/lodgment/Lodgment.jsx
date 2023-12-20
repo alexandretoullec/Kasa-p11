@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Caroussel from "../components/Caroussel";
-import StarRating from "../components/StarRating";
-import Accordion from "../components/Accordion";
-import AccordionSection from "../components/AccordionSection";
+import Caroussel from "../../components/caroussel/Caroussel";
+import StarRating from "../../components/starRating/StarRating";
+import Accordion from "../../components/Accordion/Accordion";
+import "./lodgment.scss";
 
 import { useParams } from "react-router-dom";
 

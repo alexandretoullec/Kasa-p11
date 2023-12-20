@@ -1,5 +1,6 @@
 import React from "react";
-import RentCard from "./RentCard";
+import RentCard from "../rentCard/RentCard";
+import "./Container.scss";
 
 const Container = ({ lodgments }) => {
   return (
