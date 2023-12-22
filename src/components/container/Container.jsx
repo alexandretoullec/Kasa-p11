@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+
 import RentCard from "../rentCard/RentCard";
 import "./Container.scss";
 
