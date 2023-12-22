@@ -32,6 +32,7 @@ const Lodgment = () => {
 
   useEffect(() => {
     getCurrentLodgmentData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   if (!currentLodgment || !currentLodgment.pictures || !currentLodgment.tags) {
